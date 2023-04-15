@@ -60,13 +60,11 @@ class Login extends React.Component {
               <fieldset>
                 <legend>Login</legend>
                 <label htmlFor="name">
-                  Name
-                  {' '}
                   <input
                     type="text"
                     id="name"
                     name="name"
-                    placeholder="Enter your name"
+                    placeholder="Digite seu nome"
                     data-testid="login-name-input"
                     onChange={ this.handleChange }
                     value={ name }

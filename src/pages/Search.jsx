@@ -62,22 +62,24 @@ class Search extends React.Component {
       return (
         <>
           <h1>{`Resultado de álbuns de: ${nameArtist}`}</h1>
-          {albums.map((obj) => (
-            <Link
-              key={ obj.collectionId }
-              data-testid={ `link-to-album-${obj.collectionId}` }
-              to={ `/album/${obj.collectionId}` }
-            >
-              <div>
-                <img src={ obj.artworkUrl100 } alt="" />
-                <p>{`${obj.artistName}`}</p>
-                <p>{`${obj.collectionName}`}</p>
-                <p>{`${obj.collectionPrice}`}</p>
-                <p>{`${obj.releaseDate}`}</p>
-                <p>{`${obj.trackCount} músicas` }</p>
-              </div>
-            </Link>
-          ))}
+          <div className="allAlbums">
+            {albums.map((obj) => (
+              <Link
+                key={ obj.collectionId }
+                data-testid={ `link-to-album-${obj.collectionId}` }
+                to={ `/album/${obj.collectionId}` }
+              >
+                <div id="albumId">
+                  <img src={ obj.artworkUrl100 } alt="" />
+                  <p>{`${obj.artistName}`}</p>
+                  <p>{`${obj.collectionName}`}</p>
+                  <p>{`${obj.collectionPrice}`}</p>
+                  <p>{`${obj.releaseDate}`}</p>
+                  <p>{`${obj.trackCount} músicas` }</p>
+                </div>
+              </Link>
+            ))}
+          </div>
         </>
       );
     }
@@ -94,7 +96,7 @@ class Search extends React.Component {
         <Header />
         <form>
           <fieldset>
-            <legend>Search Albums and Artists</legend>
+            <legend>Pesquisar Álbum</legend>
             <label htmlFor="name">
               <input
                 type="text"
@@ -103,6 +105,7 @@ class Search extends React.Component {
                 data-testid="search-artist-input"
                 onChange={ this.handleChange }
                 value={ name }
+                placeholder="Digite Álbum ou Artista"
               />
             </label>
             <button

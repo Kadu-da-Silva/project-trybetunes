@@ -19,3 +19,24 @@ code {
   display: flex;
   justify-content: center;
 }
+
+.allAlbums {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#albumId {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  color: aquamarine;
+  height: 300px;
+  margin: 5px;
+  padding: 5px;
+  text-align: center;
+}
+
+#albumId, a {
+  text-decoration: none;
+}
