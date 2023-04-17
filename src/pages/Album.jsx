@@ -28,7 +28,6 @@ class Album extends React.Component {
 
   render() {
     const { musics, loading } = this.state;
-    console.log(musics);
 
     if (loading || musics.length === 0) return <Loading />;
     return (
@@ -46,7 +45,7 @@ class Album extends React.Component {
             <h2>Músicas</h2>
             {musics.slice(1).map((track) => (
               <MusicCard
-                key={ track.artistId }
+                key={ track.trackId }
                 music={ track }
               />
             ))}
